@@ -1,18 +1,25 @@
 """Python wrapper for the fleet_timeline React component.
 
-The component is declared ``_RELEASE=False`` during development so Streamlit
-loads it from the Vite dev server at http://localhost:3001. Flip to True and
-rebuild (``npm run build``) before deploying.
+Release mode is driven by the ``FLEET_TIMELINE_DEV`` env var:
+
+* unset (production / Streamlit Cloud) → loads the bundled ``build/``
+  output produced by ``npm run build``.
+* ``FLEET_TIMELINE_DEV=1`` (local dev) → loads from the Vite dev server
+  at ``http://localhost:3001`` for hot-reload.
+
+Workflow: run ``npm run build`` in this directory before pushing any change
+to the component so ``build/`` stays current in git.
 """
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any
 
 import streamlit.components.v1 as components
 
-_RELEASE = False
+_RELEASE = os.environ.get("FLEET_TIMELINE_DEV") != "1"
 
 _COMPONENT_NAME = "fleet_timeline"
 

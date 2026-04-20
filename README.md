@@ -15,7 +15,31 @@ MILP-based scheduler for crude oil tanker fleets (VLCC / Suezmax). Assigns cargo
 uv sync --all-extras   # or: pip install -e ".[dev]"
 pre-commit install
 pytest
+
+# run the app (release mode — serves the committed React bundle)
+streamlit run app/streamlit_app.py
 ```
+
+### Working on the React component
+
+```bash
+cd app/components/fleet_timeline
+npm install
+npm run dev                     # Vite on :3001, hot reload
+
+# in another terminal, from repo root:
+FLEET_TIMELINE_DEV=1 streamlit run app/streamlit_app.py
+```
+
+Before pushing any change to the component, rebuild and commit the output:
+
+```bash
+cd app/components/fleet_timeline && npm run build
+git add build/ && git commit -m "rebuild fleet_timeline bundle"
+```
+
+Streamlit Cloud has no Node runtime, so the committed `build/` directory is
+what it serves.
 
 ## Out of scope
 Real-time re-optimization, ML demand forecasting, FFA hedging, emissions compliance (CII/EU ETS), chartering strategy, product tankers / LNG / dry bulk.

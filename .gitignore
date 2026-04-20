@@ -3,8 +3,8 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .eggs/
-build/
-dist/
+/build/
+/dist/
 .venv/
 venv/
 .env
@@ -42,8 +42,10 @@ gurobi.log
 
 # Node / React component
 node_modules/
-app/components/fleet_timeline/build/
 app/components/fleet_timeline/.parcel-cache/
+# NOTE: app/components/fleet_timeline/build/ is intentionally committed so
+# Streamlit Cloud (no Node runtime) can load the bundled component. Run
+# `npm run build` in that dir before pushing any component change.
 
 # Streamlit
 .streamlit/secrets.toml
