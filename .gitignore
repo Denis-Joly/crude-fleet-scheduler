@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Data — keep structure via .gitkeep, ignore contents
+data/raw/*
+data/processed/*
+data/synthetic/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/synthetic/.gitkeep
+
+# Gurobi
+gurobi.log
+*.lp
+*.mps
+*.sol
+
+# Node / React component
+node_modules/
+app/components/fleet_timeline/build/
+app/components/fleet_timeline/.parcel-cache/
+
+# Streamlit
+.streamlit/secrets.toml
