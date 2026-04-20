@@ -16,7 +16,6 @@ dependencies = [
     "searoute>=1.1",
     "plotly>=5.22",
     "streamlit>=1.35",
-    "streamlit-component-lib>=2.0",
     "pandas>=2.2",
     "numpy>=1.26",
     "pyarrow>=16.0",
@@ -46,7 +45,7 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "RUF"]
-ignore = ["E501"]
+ignore = ["E501", "RUF001", "RUF002", "RUF003"]  # allow unicode dashes/quotes in prose
 
 [tool.ruff.format]
 quote-style = "double"

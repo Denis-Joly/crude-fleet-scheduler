@@ -20,9 +20,7 @@ if _RELEASE:
     _build_dir = Path(__file__).parent / "build"
     _component_func = components.declare_component(_COMPONENT_NAME, path=str(_build_dir))
 else:
-    _component_func = components.declare_component(
-        _COMPONENT_NAME, url="http://localhost:3001"
-    )
+    _component_func = components.declare_component(_COMPONENT_NAME, url="http://localhost:3001")
 
 
 def fleet_timeline(

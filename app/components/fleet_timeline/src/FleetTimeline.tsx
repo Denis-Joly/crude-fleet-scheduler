@@ -1,9 +1,8 @@
 import { useEffect } from "react";
-import {
-  Streamlit,
-  withStreamlitConnection,
-  type ComponentProps,
-} from "streamlit-component-lib";
+import { Streamlit, withStreamlitConnection } from "streamlit-component-lib";
+// streamlit-component-lib@2.0.0 strips the generic from ComponentProps in its
+// index.d.ts re-export; import from the inner module to keep the type arg.
+import type { ComponentProps } from "streamlit-component-lib/dist/StreamlitReact";
 
 interface Vessel {
   id: string;

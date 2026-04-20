@@ -7,7 +7,6 @@ integration, and KPI dashboard arrive in Weeks 10–13 per project plan.
 from __future__ import annotations
 
 import streamlit as st
-
 from app.components.fleet_timeline import fleet_timeline
 
 st.set_page_config(page_title="Crude Fleet Scheduler", layout="wide")
