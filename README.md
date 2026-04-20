@@ -2,7 +2,7 @@
 
 MILP-based scheduler for crude oil tanker fleets (VLCC / Suezmax). Assigns cargoes to vessels over a 45-day horizon, minimizing charter cost, bunker fuel consumption, and demurrage exposure — with SOS2 linearization of the cubic fuel–speed relationship.
 
-**Status:** pre-start scaffolding (Apr 20 – May 3, 2026). See [project plan](vessel_routing_project_plan_v3.md).
+**Status:** pre-start scaffolding (Apr 20 – May 3, 2026). See [docs/overview.md](docs/overview.md) for the full project summary.
 
 ## Highlights
 - **SOS2 speed-fuel linearization** — same technique used in [pytfa](https://github.com/EPFL-LCSB/pytfa) for thermodynamic Gibbs-free-energy constraints, applied here to bunker fuel.

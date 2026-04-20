@@ -1,6 +1,6 @@
 # Mathematical formulation
 
-> **Status:** placeholder. Finalised in Week 7 per [project plan](../vessel_routing_project_plan_v3.md) §8. This file locks in design decisions made in pre-start so the Week-7 write-up doesn't drift.
+> **Status:** placeholder — pre-start design notes. Finalised once the Level-3 SOS2 model lands. This file locks in architectural decisions made during pre-start so later write-ups don't drift.
 
 ## Decision variables
 
