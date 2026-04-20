@@ -10,8 +10,10 @@ dependencies = [
     "polars>=1.0",
     "geopandas>=1.0",
     "pydantic>=2.7",
-    "gurobipy>=11.0",
     "pyomo>=6.7",
+    # Primary solver — native SOS2 for piecewise-linear fuel curve
+    "pyscipopt>=5.2",
+    # Secondary solver — fast LP/MIP for non-SOS models (Levels 1 & 2)
     "highspy>=1.7",
     "searoute>=1.1",
     "plotly>=5.22",
@@ -30,6 +32,9 @@ dev = [
     "mypy>=1.10",
     "pre-commit>=3.7",
 ]
+# Optional performance backend — Gurobi benchmarks only. Not required to run
+# the project. Falls back to size-limited license without a license file.
+gurobi = ["gurobipy>=11.0"]
 
 [build-system]
 requires = ["hatchling"]

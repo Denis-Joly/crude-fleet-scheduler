@@ -6,18 +6,23 @@ MILP-based scheduler for crude oil tanker fleets (VLCC / Suezmax). Assigns cargo
 
 ## Highlights
 - **SOS2 speed-fuel linearization** — same technique used in [pytfa](https://github.com/EPFL-LCSB/pytfa) for thermodynamic Gibbs-free-energy constraints, applied here to bunker fuel.
+- **Open-source solver stack** — SCIP (native SOS2, Apache 2.0) via `pyscipopt` by default, HiGHS for fast non-SOS models, Gurobi supported as an optional performance benchmark. No commercial license required to run or deploy.
 - **Hybrid dashboard** — Streamlit shell with a custom React + D3 + Mapbox time-slider component showing the optimized fleet animating across the horizon.
 - **Production-quality data layer** — Pydantic-validated ingestion of MarineCadastre AIS, Equasis vessel specs, World Port Index ports.
 
 ## Quick start
 
 ```bash
-uv sync --all-extras   # or: pip install -e ".[dev]"
+pip install -e ".[dev]"          # primary deps, including SCIP via pyscipopt
+# pip install -e ".[dev,gurobi]" # optional — adds gurobipy for benchmarking
 pre-commit install
 pytest
 
 # run the app (release mode — serves the committed React bundle)
 streamlit run app/streamlit_app.py
+
+# pick a different solver at runtime:
+CFS_SOLVER=highs streamlit run app/streamlit_app.py
 ```
 
 ### Working on the React component
