@@ -19,10 +19,10 @@ pre-commit install
 pytest
 
 # run the app (release mode — serves the committed React bundle)
-streamlit run app/streamlit_app.py
+streamlit run streamlit_app.py
 
 # pick a different solver at runtime:
-CFS_SOLVER=highs streamlit run app/streamlit_app.py
+CFS_SOLVER=highs streamlit run streamlit_app.py
 ```
 
 ### Working on the React component
@@ -33,7 +33,7 @@ npm install
 npm run dev                     # Vite on :3001, hot reload
 
 # in another terminal, from repo root:
-FLEET_TIMELINE_DEV=1 streamlit run app/streamlit_app.py
+FLEET_TIMELINE_DEV=1 streamlit run streamlit_app.py
 ```
 
 Before pushing any change to the component, rebuild and commit the output:

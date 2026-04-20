@@ -15,7 +15,7 @@ npm run dev            # Vite dev server on :3001
 In a second terminal from the repo root:
 
 ```bash
-FLEET_TIMELINE_DEV=1 streamlit run app/streamlit_app.py
+FLEET_TIMELINE_DEV=1 streamlit run streamlit_app.py
 ```
 
 `FLEET_TIMELINE_DEV=1` flips the component to load from the Vite dev server
