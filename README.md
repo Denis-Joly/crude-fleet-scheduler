@@ -10,6 +10,10 @@ MILP-based scheduler for crude oil tanker fleets (VLCC / Suezmax). Assigns cargo
 
 **Live demo:** [crude-fleet-scheduler.streamlit.app](https://crude-fleet-scheduler.streamlit.app) — pre-start placeholder; the real optimizer + D3/Mapbox time-slider ship Week 12.
 
+![Streamlit Cloud PoC — custom React component receiving state from Python](docs/screenshots/streamlit_app_poc.png)
+
+*Pre-start proof-of-concept running on Streamlit Cloud: the custom React component (dark box) is mounted inside the Streamlit app and receiving slider state + vessel data from the Python side. This validates the entire Week 12 deployment pipeline — Vite-built bundle, committed `build/`, React ↔ Streamlit bridge — before any optimization code is written.*
+
 ## Highlights
 - **SOS2 speed-fuel linearization** — same technique used in [pytfa](https://github.com/EPFL-LCSB/pytfa) for thermodynamic Gibbs-free-energy constraints, applied here to bunker fuel.
 - **Open-source solver stack** — SCIP (native SOS2, Apache 2.0) via `pyscipopt` by default, HiGHS for fast non-SOS models, Gurobi supported as an optional performance benchmark. No commercial license required to run or deploy.
