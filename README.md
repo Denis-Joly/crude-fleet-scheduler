@@ -1,8 +1,14 @@
 # Crude Fleet Scheduler
 
+[![CI](https://github.com/Denis-Joly/crude-fleet-scheduler/actions/workflows/ci.yml/badge.svg)](https://github.com/Denis-Joly/crude-fleet-scheduler/actions/workflows/ci.yml)
+[![Live demo](https://img.shields.io/badge/live%20demo-streamlit-ff4b4b?logo=streamlit&logoColor=white)](https://crude-fleet-scheduler.streamlit.app)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 MILP-based scheduler for crude oil tanker fleets (VLCC / Suezmax). Assigns cargoes to vessels over a 45-day horizon, minimizing charter cost, bunker fuel consumption, and demurrage exposure — with SOS2 linearization of the cubic fuel–speed relationship.
 
 **Status:** pre-start scaffolding (Apr 20 – May 3, 2026). See [docs/overview.md](docs/overview.md) for the full project summary.
+
+**Live demo:** [crude-fleet-scheduler.streamlit.app](https://crude-fleet-scheduler.streamlit.app) — pre-start placeholder; the real optimizer + D3/Mapbox time-slider ship Week 12.
 
 ## Highlights
 - **SOS2 speed-fuel linearization** — same technique used in [pytfa](https://github.com/EPFL-LCSB/pytfa) for thermodynamic Gibbs-free-energy constraints, applied here to bunker fuel.
